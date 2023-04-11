@@ -5,6 +5,11 @@ const vm = Vue.createApp({
       lastName: "Groo",
     };
   },
+  methods: {
+    fullName() {
+      return `${this.firstName} ${this.lastName}`;
+    },
+  },
 }).mount("#app");
 
 /* setTimeout(() => {
