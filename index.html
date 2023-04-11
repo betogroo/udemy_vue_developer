@@ -7,6 +7,11 @@
   <body>
     <div id="app" v-cloak>
           <h1>{{fullName()}}</h1>
+          <hr />
+          <label>First Name</label>
+          <input type="text" v-model="firstName">
+          <label>Last Name</label>
+          <input type="text" v-model="lastName">
     </div>
    <!--  <div id="app1">
           <h1>{{ firstName }} {{lastName}}</h1>
