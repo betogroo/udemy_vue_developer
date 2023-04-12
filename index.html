@@ -7,7 +7,8 @@
   <body>
     <div id="app" v-cloak>
           <h1>{{fullName()}}</h1>
-          <p><a :href="url">Google</a></p>
+          <p><a :href="url" target="_blank">Google</a></p>
+          <p>{{raw}}</p>
           <hr />
           <label>First Name</label>
           <input type="text" v-model="firstName">
