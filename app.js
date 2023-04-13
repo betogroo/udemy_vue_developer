@@ -6,6 +6,7 @@ const vm = Vue.createApp({
       url: "https://google.com",
       raw: '<a href="https://google.com" target="_blank">Google</a>',
       age: 20,
+      lastNameChanges: 0,
     };
   },
   methods: {
@@ -15,7 +16,10 @@ const vm = Vue.createApp({
     increment() {
       this.age++;
     },
-    updateLastName(event) {
+    updateLastName(msg, event) {
+      event.preventDefault();
+      this.lastNameChanges++;
+      console.log(`${msg} ${this.lastNameChanges} times`);
       this.lastName = event.target.value;
     },
   },
