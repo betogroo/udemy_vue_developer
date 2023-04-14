@@ -18,7 +18,7 @@
           <input type="text" :value="lastName" @input.prevent="updateLastName('Last name has changed', $event)">
           <label for="age">Age</label>
           {{typeof age}}
-          <input type="number" v-model.number="age">
+          <input type="number" v-model.number.lazy="age">
           <button v-on:click="increment()">+</button>
           <button @click="age--">-</button>
     </div>
