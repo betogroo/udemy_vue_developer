@@ -11,19 +11,22 @@ const vm = Vue.createApp({
     };
   },
   methods: {
-    fullName() {
-      return `${this.firstName} ${this.middleName} ${this.lastName}`;
-    },
     increment() {
       this.age++;
     },
     updateLastName(msg, event) {
       this.lastNameChanges++;
-      console.log(`${msg} ${this.lastNameChanges} times`);
+      // console.log(`${msg} ${this.lastNameChanges} times`);
       this.lastName = event.target.value;
     },
     updateMiddleName(event) {
       this.middleName = event.target.value;
+    },
+  },
+  computed: {
+    fullName() {
+      console.log("fullName computed property was call!");
+      return `${this.firstName} ${this.middleName} ${this.lastName}`;
     },
   },
 }).mount("#app");
