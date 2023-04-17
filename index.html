@@ -1,31 +1,24 @@
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
-  <head>
-    <title>VueJS Course</title>
-    <link rel="stylesheet" type="text/css" href="main.css" />
-  </head>
-  <body>
-    <div id="app" v-cloak>
-          <h1>{{fullName}}</h1>
-          <p><a :href="url" target="_blank">Google</a></p>
-          <p v-html="raw"></p>
-          <hr />
-          <label>First Name</label>
-          <input type="text" v-model.trim.lazy="firstName">
-          <label>Middle Name</label>
-          <input type="text" @keyup.enter="updateMiddleName">
-          <label>Last Name</label>
-          <input type="text" :value="lastName" @input.prevent="updateLastName('Last name has changed', $event)">
-          <label for="age">Age</label>
-          {{typeof age}}
-          <input type="number" v-model.number.lazy="age">
-          <button v-on:click="increment()">+</button>
-          <button @click="age--">-</button>
+
+<head>
+  <title>VueJS Course</title>
+  <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+  <div id="app">
+    <label>
+      <input type="checkbox" /> Purple
+    </label>
+
+    <div class="circle">
+      Hi!
     </div>
-   <!--  <div id="app1">
-          <h1>{{ firstName }} {{lastName}}</h1>
-    </div> -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="app.js"></script>
-  </body>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="app.js"></script>
+</body>
+
 </html>
