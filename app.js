@@ -1,30 +1,37 @@
-Vue.createApp({
+let vm = Vue.createApp({
   data() {
     return {
-      perspective: 100,
-      rotateX: 0,
-      rotateY: 0,
-      rotateZ: 0,
-    };
+      message: "Hello world!"
+    }
   },
-  methods: {
-    reset() {
-      this.perspective = 100;
-      this.rotateX = 0;
-      this.rotateY = 0;
-      this.rotateZ = 0;
-    },
+  beforeCreate() {
+    console.log('beforeCreate() function called!', this.message)
   },
-  computed: {
-    box() {
-      return {
-        transform: `
-        perspective(${this.perspective}px)
-        rotateX(${this.rotateX}deg)
-        rotateY(${this.rotateY}deg)
-        rotateZ(${this.rotateZ}deg)
-        `,
-      };
-    },
+  created() {
+    console.log('created() function called!', this.message)
   },
-}).mount("#app");
+  beforeMount() {
+    console.log('beforeMount() function called!', this.$el)
+  },
+  mounted() {
+    console.log('mounted() function called!', this.$el)
+  },
+  beforeUpdate() {
+    console.log('beforeUpdate() function called!')
+  },
+  updated() {
+    console.log('updated() funcction called!')
+  },
+  beforeUnmount() {
+    console.log('beforeUnmount() function called!')
+  },
+  unmounted() {
+    console.log('unmounted() function called!')
+  }
+})
+
+vm.mount('#app')
+
+// setTimeout(() => {
+//   vm.mount('#app')
+// }, 3000)
